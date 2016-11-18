@@ -2,6 +2,8 @@ all : MySmartPointers
 
 MySmartPointers: MySharedPointer.o MyMain.o
 	g++ -o MySmartPointers MyMain.o 
+	valgrind --leak-check=yes ./MySmartPointers
+
 
 MyMain.o: main.cpp
 	g++ -c main.cpp -o MyMain.o -std=c++11 
